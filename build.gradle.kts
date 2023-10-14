@@ -11,6 +11,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
   alias(libs.plugins.sqldelight)
   alias(libs.plugins.ktor)
   alias(libs.plugins.spotless)
+  // kotlin("jvm")
+  // kotlin("plugin.serialization") version "1.8.20"
+  id("org.jetbrains.compose") version "1.5.1"
+  // kotlin("multiplatform") version "1.8.20" apply false
+  // kotlin("plugin.serialization") version libs.versions.kotlin.get() apply false
 }
 
 application {
@@ -33,6 +38,9 @@ allprojects {
 
 repositories {
   mavenCentral()
+  gradlePluginPortal()
+  maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
+  google()
 }
 
 java {
